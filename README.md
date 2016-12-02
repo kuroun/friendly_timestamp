@@ -1,8 +1,10 @@
 # FriendlyTimestamp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/friendly_timestamp`. To experiment with that code, run `bin/console` for an interactive prompt.
+A gem for display time and date based on local time zone in verbal informal saying like more than two day ago, less one week ago...etc.
+It also provides method for full format of date and time in local time zone as well.
 
-TODO: Delete this and the text above, and describe your gem
+![alt tag](https://github.com/kuroun/friendly_timestamp/blob/master/assets/images/example_in_reflex.png)
+
 
 ## Installation
 
@@ -38,4 +40,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
