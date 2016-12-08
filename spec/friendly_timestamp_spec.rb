@@ -1,7 +1,7 @@
 require "spec_helper"
 
 #describe FriendlyTimestamp::DateTime do
-describe DateTime do
+describe Time do
   it "has a version number" do
     expect(FriendlyTimestamp::VERSION).not_to be nil
   end
