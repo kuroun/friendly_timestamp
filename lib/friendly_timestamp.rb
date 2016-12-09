@@ -13,7 +13,7 @@ require "pry"
 
   class Time
 
-    def friendly_timestamp
+    def friendly_format
     # convert time to local time
     # using minute format if less hour
     # using hour format if less than a day
@@ -89,8 +89,6 @@ require "pry"
       # multiplle -1 here because js represent time difference varies from how rails represents
       # get offset in hour
       return (defined? cookies[:time_zone_offset_utc_mn]) ? (-1 * cookies[:time_zone_offset_utc_mn].to_f / 60) : 0
-      #-1 * cookies[:time_zone_offset_utc_mn].to_f / 60
     end
-
   end
 #end
