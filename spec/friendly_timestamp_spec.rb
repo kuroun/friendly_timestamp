@@ -4,6 +4,27 @@ describe Time do
   it 'has a version number' do
     expect(FriendlyTimestamp::VERSION).not_to be nil
   end
+
+  describe 'word_form' do
+    # make sure that return more than or less than phrase
+    # make sure that number is no decimal form
+    # make sure that it returns appropriate singular and plural form of word
+    word = 'minute'
+    context 'when number after decimal point is equal or more than 5' do
+      num = 1.5
+      it 'is supposed to be rounded up' do
+        expect(Time.now.send(:word_form, num, word)).to eq 'less than 2 minutes'
+      end
+    end
+
+    context 'when number after decimal point is less than 5' do
+      num = 1.4
+      it 'is supposed to be rounded down' do
+        expect(Time.now.send(:word_form, num, word)).to eq 'more than 1 minute'
+      end
+    end
+  end
+
   describe '#friendly_format' do
     context 'when less than a minute' do
       time = Time.now - 30
