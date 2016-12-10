@@ -1,11 +1,9 @@
-require "spec_helper"
+require 'spec_helper'
 
-#describe FriendlyTimestamp::DateTime do
 describe Time do
-  it "has a version number" do
+  it 'has a version number' do
     expect(FriendlyTimestamp::VERSION).not_to be nil
   end
-
   describe '#friendly_format' do
     context 'when less than a minute' do
       time = Time.now - 30

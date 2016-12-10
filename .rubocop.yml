@@ -1,0 +1,50 @@
+# Common configuration.
+AllCops:
+
+  Exclude:
+    - sample_option_price_output.rb
+    - 'log/*'
+    - 'tmp/**/*'
+    - '.DS_Store'
+    - 'public/assets/*'
+    - 'public/503.html'
+    - '.env'
+    - '*.pem'
+    - '*.orig'
+    - 'lib/templates/rails/**/*'
+    - db/schema.rb
+    - bin/setup
+    - bin/*
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 500
+
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/LineLength:
+  Max: 300
+
+Metrics/ClassLength:
+  Max: 700
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  Max: 1000
+
+Metrics/ModuleLength:
+  Max: 500
+
+Metrics/ParameterLists:
+  Max: 5
+
+Metrics/PerceivedComplexity:
+  Max: 20
