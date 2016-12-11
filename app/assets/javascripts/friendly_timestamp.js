@@ -4,7 +4,7 @@ $(document).ready(function() {
   var d, n;
   d = new Date;
   n = d.getTimezoneOffset();
-  return set_cookie('time_zone_offset_utc_mn', n, 30);
+  return set_cookie('fts_offset', n, 30);
 });
 
 set_cookie = function(cname, cvalue, exdays) {
