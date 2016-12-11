@@ -1,3 +1,4 @@
+require 'friendly_timestamp/engine'
 require 'friendly_timestamp/version'
 require 'active_support/all'
 require 'pry'
@@ -65,8 +66,12 @@ class Time
     "#{word_form(in_years, 'year')} ago"
   end
 
-  def full_format
-    to_local_time.strftime("%a, %b #{to_local_time.day.ordinalize} %Y at %H:%M")
+  def full_format(mn_offset = 0)
+    # multiplle -1 here because js represent time difference varies from how rails represents
+    # get offset in hour
+    hour_offset = (-1 * mn_offset.to_f / 60)
+    fts_local_time = in_time_zone hour_offset
+    fts_local_time.strftime("%a, %b #{fts_local_time.day.ordinalize} %Y at %H:%M")
   end
 
   private
@@ -76,17 +81,7 @@ class Time
     num > num.round ? "more than #{num.round} #{word}" : "less than #{num.round} #{word}"
   end
 
-  def local_time_zone_offset
-    # multiplle -1 here because js represent time difference varies from how rails represents
-    # get offset in hour
-    defined?(cookies[:time_zone_offset_utc_mn]) ? (-1 * cookies[:time_zone_offset_utc_mn].to_f / 60) : 0
-  end
-
   def diff_utc
-    (Time.now.send(:to_local_time) - to_local_time).to_f.abs
-  end
-
-  def to_local_time
-    in_time_zone(local_time_zone_offset)
+    (Time.now - self).to_f.abs
   end
 end
