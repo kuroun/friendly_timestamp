@@ -71,7 +71,7 @@ class Time
     # get offset in hour
     hour_offset = (-1 * mn_offset.to_f / 60)
     fts_local_time = in_time_zone hour_offset
-    fts_local_time.strftime("%a, %b #{fts_local_time.day.ordinalize} %Y at %H:%M")
+    fts_local_time.strftime("%a, %b #{fts_local_time.day.ordinalize} %Y at %H:%M %Z")
   end
 
   private

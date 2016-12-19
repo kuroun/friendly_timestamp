@@ -78,8 +78,8 @@ describe Time do
     context 'when more than or equal 5 years' do
       time = Time.now - 60 * 60 * 24 * 365 * 5
       it 'returns full format' do
-        # match regular expression (Thu, Nov 17th 2016 at 17:50)
-        expect(time.friendly_format).to match(/((Sun)|(Mon)|(Tue)|(Wed)|(Thu)|(Fri)|(Sat))(,\s)((Jan)|(Feb)|(Mar)|(Apr)|(May)|(Jun)|(Jul)|(Aug)|(Sep)|(Oct)|(Nov)|(Dec))(\s)[0-9]{1,2}((st)|(nd)|(rd)|(th))(\s)[0-9]{4}(\s)(at)(\s)[0-9]{1,2}(:)[0-9]{1,2}/)
+        # match regular expression (Thu, Nov 17th 2016 at 17:50 UTC)
+        expect(time.friendly_format).to match(/((Sun)|(Mon)|(Tue)|(Wed)|(Thu)|(Fri)|(Sat))(,\s)((Jan)|(Feb)|(Mar)|(Apr)|(May)|(Jun)|(Jul)|(Aug)|(Sep)|(Oct)|(Nov)|(Dec))(\s)[0-9]{1,2}((st)|(nd)|(rd)|(th))(\s)[0-9]{4}(\s)(at)(\s)[0-9]{1,2}(:)[0-9]{1,2}(\s)[A-Z]{3}/)
       end
     end
   end
