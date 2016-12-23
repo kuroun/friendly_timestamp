@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'A gem for display time and date based on local time zone in verbal informal saying like more than two day ago, less one week ago...etc.
   It also provides method for full format of date and time in local time zone as well.'
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/kuroun/friendly_timestamp"
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -24,11 +24,12 @@ Gem::Specification.new do |spec|
   #     'public gem pushes.'
   # end
 
-  spec.files         = 'git ls-files -z'.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  # spec.files         = 'git ls-files -z'.split("\x0").reject do |f|
+  #   f.match(%r{^(test|spec|features)/})
+  # end
+  spec.files = Dir['{app,lib}/**/*', 'bin/*', 'spec/*', 'Gemfile', 'CODE_OF_CONDUCT.md', 'LICENSE.txt']
+  #spec.bindir        = 'exe'
+  #spec.executables   = 'rake'
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.13'
