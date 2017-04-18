@@ -1,7 +1,6 @@
 require 'friendly_timestamp/engine'
 require 'friendly_timestamp/version'
 require 'active_support/all'
-require 'pry'
 
 ONE_MINUTE = 60
 ONE_HOUR = ONE_MINUTE * 60
