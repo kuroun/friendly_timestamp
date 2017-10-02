@@ -13,14 +13,14 @@ describe Time do
     context 'when number after decimal point is equal or more than 5' do
       num = 1.5
       it 'is supposed to be rounded up' do
-        expect(Time.now.send(:word_form, num, word)).to eq 'less than 2 minutes'
+        expect(Time.now.word_form(num, word)).to eq 'less than 2 minutes'
       end
     end
 
     context 'when number after decimal point is less than 5' do
       num = 1.4
       it 'is supposed to be rounded down' do
-        expect(Time.now.send(:word_form, num, word)).to eq 'more than 1 minute'
+        expect(Time.now.word_form(num, word)).to eq 'more than 1 minute'
       end
     end
   end
@@ -68,7 +68,7 @@ describe Time do
       end
     end
 
-    context 'when from 1 year to less than 10 years' do
+    context 'when from 1 year to less than 5 years' do
       time = Time.now - 60 * 60 * 24 * 365
       it 'returns in year format' do
         expect(time.friendly_format).to include '1 year ago'
