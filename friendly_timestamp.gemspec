@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'A gem for display time and date based on local time zone in verbal informal saying like more than two day ago, less one week ago...etc.
   It also provides method for full format of date and time in local time zone as well.'
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/kuroun/friendly_timestamp"
+  spec.homepage      = "https://github.com/kseung-gpsw/friendly_timestamp"
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.5.2'
   spec.required_ruby_version = '~> 2.0'
-  
+
 end
